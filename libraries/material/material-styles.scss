@@ -1,0 +1,173 @@
+/* For use in src/lib/core/theming/_palette.scss */
+$md-dirdem-primary: (
+    50 : #f7faf9,
+    100 : #ecf4f0,
+    200 : #dfece6,
+    300 : #d2e4db,
+    400 : #c9dfd4,
+    500 : #bfd9cc,
+    600 : #b9d5c7,
+    700 : #b1cfc0,
+    800 : #a9cab9,
+    900 : #9bc0ad,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fcfffe,
+    A700 : #e3fff1,
+    contrast: (
+        50 : #030266,
+        100 : #030266,
+        200 : #030266,
+        300 : #030266,
+        400 : #030266,
+        500 : #030266,
+        600 : #030266,
+        700 : #030266,
+        800 : #030266,
+        900 : #030266,
+        A100 : #030266,
+        A200 : #030266,
+        A400 : #030266,
+        A700 : #030266,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-dirdem-secondary: (
+    50 : #fdfdfd,
+    100 : #f9f9fa,
+    200 : #f5f6f7,
+    300 : #f1f2f4,
+    400 : #eeeff1,
+    500 : #ebecef,
+    600 : #e9eaed,
+    700 : #e5e7eb,
+    800 : #e2e4e8,
+    900 : #dddfe4,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #555,
+        100 : #555,
+        200 : #555,
+        300 : #555,
+        400 : #555,
+        500 : #555,
+        600 : #555,
+        700 : #555,
+        800 : #555,
+        900 : #555,
+        A100 : #555,
+        A200 : #555,
+        A400 : #555,
+        A700 : #555,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-dirdem-accent: (
+  50 : #e1e1ed,
+  100 : #b3b3d1,
+  200 : #8181b3,
+  300 : #4f4e94,
+  400 : #29287d,
+  500 : #030266,
+  600 : #03025e,
+  700 : #020153,
+  800 : #020149,
+  900 : #010138,
+  A100 : #6e6eff,
+  A200 : #3b3bff,
+  A400 : #0808ff,
+  A700 : #0000ee,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #ffffff,
+      A200 : #ffffff,
+      A400 : #ffffff,
+      A700 : #ffffff,
+  )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-dirdem-warn: (
+    50 : #f9e0e0,
+    100 : #f0b3b3,
+    200 : #e68080,
+    300 : #db4d4d,
+    400 : #d42626,
+    500 : #cc0000,
+    600 : #c70000,
+    700 : #c00000,
+    800 : #b90000,
+    900 : #ad0000,
+    A100 : #ffd7d7,
+    A200 : #ffa4a4,
+    A400 : #ff7171,
+    A700 : #ff5858,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+@import '~@angular/material/theming';
+
+
+$dirdem-primary: mat-palette($md-dirdem-primary);
+$dirdem-secondary: mat-palette($md-dirdem-secondary);
+$dirdem-accent: mat-palette($md-dirdem-accent, A200, A100, A400);
+$dirdem-warn: mat-palette($md-dirdem-warn);
+
+
+$dirdem-app-theme: mat-light-theme((
+  color: (
+    primary: $dirdem-primary,
+    secondary: $dirdem-secondary,
+    accent: $dirdem-accent,
+    warn: $dirdem-warn,
+  )
+));
+
+$dirdem-tipography: mat-typography-config(
+  $font-family: 'Consolas'
+);
+
+
+@include mat-core();
+@include angular-material-typography($dirdem-tipography);
+@include angular-material-theme($dirdem-app-theme);
+
+
+/*
+:root {
+  --dirdemprimary: #bfd9cc;
+  --dirdemsecondary: #ebecef;
+  --dirdemaccent: #030266;
+  --dirdemwarn: #ef9a9a;
+}
+*/

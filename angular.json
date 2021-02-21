@@ -1,0 +1,210 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "fuse-bit": {
+      "projectType": "library",
+      "root": "libraries/fuse-bit",
+      "sourceRoot": "libraries/fuse-bit/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "libraries/fuse-bit/tsconfig.lib.json",
+            "project": "libraries/fuse-bit/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libraries/fuse-bit/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libraries/fuse-bit/src/test.ts",
+            "tsConfig": "libraries/fuse-bit/tsconfig.spec.json",
+            "karmaConfig": "libraries/fuse-bit/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libraries/fuse-bit/tsconfig.lib.json",
+              "libraries/fuse-bit/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "dirdem-common": {
+      "projectType": "library",
+      "root": "libraries/dirdem-common",
+      "sourceRoot": "libraries/dirdem-common/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "libraries/dirdem-common/tsconfig.lib.json",
+            "project": "libraries/dirdem-common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libraries/dirdem-common/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libraries/dirdem-common/src/test.ts",
+            "tsConfig": "libraries/dirdem-common/tsconfig.spec.json",
+            "karmaConfig": "libraries/dirdem-common/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libraries/dirdem-common/tsconfig.lib.json",
+              "libraries/dirdem-common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "configuration-tool": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/configuration-tool",
+      "sourceRoot": "apps/configuration-tool/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/configuration-tool",
+            "index": "apps/configuration-tool/src/index.html",
+            "main": "apps/configuration-tool/src/main.ts",
+            "polyfills": "apps/configuration-tool/src/polyfills.ts",
+            "tsConfig": "apps/configuration-tool/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/configuration-tool/src/favicon.ico",
+              "apps/configuration-tool/src/assets"
+            ],
+            "styles": [
+              "apps/configuration-tool/src/styles.scss",
+              "libraries/material/material-styles.scss",
+              "libraries/dirdem-common/styles/dirdem-common-styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/configuration-tool/src/environments/environment.ts",
+                  "with": "apps/configuration-tool/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "configuration-tool:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "configuration-tool:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "configuration-tool:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/configuration-tool/src/test.ts",
+            "polyfills": "apps/configuration-tool/src/polyfills.ts",
+            "tsConfig": "apps/configuration-tool/tsconfig.spec.json",
+            "karmaConfig": "apps/configuration-tool/karma.conf.js",
+            "assets": [
+              "apps/configuration-tool/src/favicon.ico",
+              "apps/configuration-tool/src/assets"
+            ],
+            "styles": [
+              "apps/configuration-tool/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/configuration-tool/tsconfig.app.json",
+              "apps/configuration-tool/tsconfig.spec.json",
+              "apps/configuration-tool/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/configuration-tool/e2e/protractor.conf.js",
+            "devServerTarget": "configuration-tool:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "configuration-tool:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "fuse-bit"
+}
