@@ -20,3 +20,5 @@ export const MAIN_OUT_PROCESSES =
    compileCProjectFailed: 'compileCProjectFailed',
    burnHexFileFailed: 'burnHexFileFailed'
 }
+
+export const EXADECIMAL_REGEX_VALIDATOR = /[0-9A-Fa-f]{1,2}\b/

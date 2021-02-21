@@ -6,6 +6,8 @@ import { ElectronService } from 'ngx-electron';
 import { LoaderService } from 'libraries/dirdem-common/services/loader.service';
 import { Fuse } from 'libraries/dirdem-common/models/typeScript/fuse-bit-base';
 import { MAIN_IN_PROCESSES } from 'libraries/dirdem-common/shared/constants';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { FuseBitFormValidator } from './fuse-bit-form-validator';
 
 @Component({
   selector: 'app-fuse-bit',
@@ -13,17 +15,25 @@ import { MAIN_IN_PROCESSES } from 'libraries/dirdem-common/shared/constants';
   styleUrls: ['./fuse-bit.component.css'],
 })
 export class FuseBitComponent {
+  formGroup: FormGroup;
+  formValidator: FuseBitFormValidator;
+
   @Input() microcontroller: AvrMicrocontroller;
 
   columns: { index: number; columnDef: string; header: string; footer: string } [] = [];
+  columnsWidth: string;
   displayedColumns: string[] = [];
   dataSource: FuseBit[][] = [];
 
-  constructor(private electronService: ElectronService, private loaderService: LoaderService, private cd: ChangeDetectorRef) { }
+  constructor(private electronService: ElectronService, private loaderService: LoaderService,
+    private cd: ChangeDetectorRef, private fb: FormBuilder) { }
 
   ngOnChanges(): void {
+    this.formValidator = new FuseBitFormValidator(this.fb, this.microcontroller?.fuses);
+    this.formGroup = this.formValidator?.formGroup;
     const fuseMatrix: FuseBit[][] = this.microcontroller?.fuses.map(fuse => this.orderBitForGUI(fuse.bits));
     this.dataSource = ConverterUtilities.matrixTranspose(fuseMatrix);
+    this.columnsWidth = `${100/this.microcontroller?.fuses.length}%`;
     // this.createTable(this.dataSource);
     this.microcontroller?.fuses?.forEach((fuse, i) => {
       this.columns.push({

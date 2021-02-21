@@ -3,22 +3,35 @@
   <mat-checkbox [checked]="false"> = 1 (unprogrammed) </mat-checkbox>
 </div>
 
+<div [formGroup]="formGroup" *ngIf="formGroup && formValidator">
+
 <table mat-table #table [dataSource]="dataSource" id="fuse-table" *ngIf="displayedColumns.length">
 
   <ng-container *ngFor="let column of columns;" [cdkColumnDef]="column.columnDef">
     <!-- header -->
-    <td mat-header-cell *cdkHeaderCellDef [ngClass]="column.index == 0? 'row-padding' : 'null'">
+    <td mat-header-cell *cdkHeaderCellDef [ngClass]="column.index == 0? 'row-padding' : 'null'" [ngStyle]="{'width': columnsWidth}">
       {{ column.header }} </td>
     <!-- celle -->
-    <td mat-cell *cdkCellDef="let row">
+    <td mat-cell *cdkCellDef="let row" [ngStyle]="{'width': 100/columns.length}" [ngStyle]="{'width': columnsWidth}">
       <mat-checkbox [checked]="!row[column.index].value" (change)="onCellClicked(column.columnDef, row[column.index])">
         {{ row[column.index].bit }} {{ row[column.index].label }} </mat-checkbox>
     </td>
     <!-- footer -->
-    <td mat-footer-cell *matFooterCellDef>
+    <td mat-footer-cell *matFooterCellDef [ngStyle]="{'width': 100/columns.length}" [ngStyle]="{'width': columnsWidth}">
       <div>
         <span> 0x </span>
-        <input matInput [(ngModel)]="column.footer" (ngModelChange)="onFooterChange($event, column.header)" class="footer-input">
+        <input matInput [formControlName]="column.index" [(ngModel)]="column.footer" (ngModelChange)="onFooterChange($event, column.header)" class="footer-input">
+        <div>
+          <mat-error *ngIf="formGroup.get(column.index.toString())?.errors?.maxlength">
+            Length greater than 2
+          </mat-error>
+          <mat-error *ngIf="formGroup.get(column.index.toString())?.errors?.required">
+            Insert a value
+          </mat-error>
+          <mat-error *ngIf="formGroup.get(column.index.toString())?.errors?.pattern">
+            Hexadecimal values only
+          </mat-error>
+        </div>
       </div>
     </td>
   </ng-container>
@@ -30,7 +43,9 @@
 </table>
 
 <div id="button-container">
-  <button mat-raised-button color="primary" (click)="burnFuses()">BURN FUSES</button>
+  <button mat-raised-button color="primary" (click)="burnFuses()" [disabled]="formGroup.invalid">BURN FUSES</button>
+</div>
+
 </div>
 
 
