@@ -154,7 +154,8 @@ $dirdem-app-theme: mat-light-theme((
 ));
 
 $dirdem-tipography: mat-typography-config(
-  $font-family: 'Consolas'
+  $font-family: 'Courier New', Courier, monospace
+  // $font-family: 'Consolas'
 );
 
 
@@ -162,6 +163,13 @@ $dirdem-tipography: mat-typography-config(
 @include angular-material-typography($dirdem-tipography);
 @include angular-material-theme($dirdem-app-theme);
 
+
+:root {
+  --primary: #{mat-color($dirdem-primary)};
+  --secondary: #{mat-color($dirdem-secondary)};
+  --accent: #{mat-color($dirdem-accent)};
+  --warn: #{mat-color($dirdem-warn)};
+}
 
 /*
 :root {
