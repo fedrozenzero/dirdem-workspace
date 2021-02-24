@@ -3,5 +3,10 @@
   DIRDEM MICRO
 </div>
 
-<app-fuse-bit [microcontroller]="microcontroller" *ngIf="microcontroller?.fuses"></app-fuse-bit>
+<!--app-fuse-bit [microcontroller]="microcontroller" *ngIf="microcontroller?.fuses"></app-fuse-bit-->
+<div style="margin-left: 10px">
+  <lib-avr-technical-specifications-card [microcontroller]="microcontroller" [microcontrollerPinConfiguration]="microcontrollerPinConfiguration">
+  </lib-avr-technical-specifications-card>
+</div>
+
 

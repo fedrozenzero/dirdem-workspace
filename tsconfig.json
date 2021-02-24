@@ -23,6 +23,10 @@
       "dirdem-common": [
         "dist/dirdem-common/dirdem-common",
         "dist/dirdem-common"
+      ],
+      "technical-specifications": [
+        "dist/technical-specifications/technical-specifications",
+        "dist/technical-specifications"
       ]
     }
   }

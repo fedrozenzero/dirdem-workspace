@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ATMEGA328P, AvrMicrocontroller } from 'libraries/dirdem-common/public-api';
+import { ATMEGA328P, AvrMicrocontroller, MicrocontrollerPinConfiguaration } from 'libraries/dirdem-common/public-api';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,6 @@ import { ATMEGA328P, AvrMicrocontroller } from 'libraries/dirdem-common/public-a
 export class AppComponent {
   title = 'configuration-tool';
   microcontroller = new AvrMicrocontroller(<any>ATMEGA328P);
+  microcontrollerPinConfiguration = this.microcontroller?.microcontrollerPinConfigurations[0];
 
 }

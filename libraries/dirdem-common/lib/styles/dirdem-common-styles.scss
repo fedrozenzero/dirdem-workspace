@@ -10,10 +10,18 @@
   overflow: hidden;
 }
 
+.no-margin {
+  margin: 0;
+}
+
 .text-center {
   text-align: center;
 }
 
 .input-upper{
   text-transform: uppercase;
+}
+
+.clickable-link {
+  color: var(--accent);
 }

@@ -204,6 +204,46 @@
           }
         }
       }
+    },
+    "technical-specifications": {
+      "projectType": "library",
+      "root": "libraries/technical-specifications",
+      "sourceRoot": "libraries/technical-specifications/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "libraries/technical-specifications/tsconfig.lib.json",
+            "project": "libraries/technical-specifications/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libraries/technical-specifications/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libraries/technical-specifications/src/test.ts",
+            "tsConfig": "libraries/technical-specifications/tsconfig.spec.json",
+            "karmaConfig": "libraries/technical-specifications/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libraries/technical-specifications/tsconfig.lib.json",
+              "libraries/technical-specifications/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "fuse-bit"

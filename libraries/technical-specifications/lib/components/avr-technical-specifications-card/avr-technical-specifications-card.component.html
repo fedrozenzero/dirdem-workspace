@@ -1,0 +1,81 @@
+<div *ngIf="microcontroller && microcontrollerPinConfiguration">
+
+  <div class="mat-h1">
+    Avr Technical Specifications
+  </div>
+
+  <!-- Data bus (architecture) & datasheet -->
+  <div class="mat-h2">
+    <span>
+      {{ microcontroller?.dataBus?.value }} -
+      {{ microcontroller?.dataBus?.measureUnit }} Microcontroller
+    </span>
+  </div>
+  <!-- Datasheet -->
+  <div class="mat-h2 clickable-link">
+    <a href="{{ microcontroller?.datasheetUrl }}">
+      <span> Official datasheet </span>
+    </a>
+  </div>
+  <!-- Name -->
+  <div class="mat-h3">
+    <div>
+      <span> Name: </span>
+      <span> {{ microcontroller?.name }} </span>
+    </div>
+    <!-- Family -->
+    <div>
+      <span> Family: </span>
+      <span> {{ microcontroller?.family }} </span>
+    </div>
+    <!-- Memory segments -->
+    <div>
+      <span> Memory Segments: </span>
+      <div *ngFor="let segment of microcontroller?.memorySegments">
+        <li>
+          {{ segment?.memorySegmentName }}: {{ segment?.memorySegmentValue?.value }}
+          {{ segment?.memorySegmentValue?.measureUnit }}
+        </li>
+      </div>
+    </div>
+    <!-- Peripheral Features -->
+    <div> Peripheral Features: </div>
+    <span> Timers </span>
+    <div *ngFor="let pf of microcontroller?.peripheralFeatures?.microcontrollerTimers">
+      <li>
+        {{ pf?.microcontrollerTimerName }} - {{ pf?.microcontrollerWidthCounter?.value }}
+        {{ pf?.microcontrollerWidthCounter?.measureUnit }}
+      </li>
+    </div>
+    <!-- Communication Interfaces -->
+    <span> Communication Interfaces: </span>
+    <div *ngFor="let interface of this.microcontroller?.communicationInterfaces">
+      <li> {{ interface?.name }} </li>
+    </div>
+    <!-- I/O -->
+    <div>
+      <span> Pin (package
+        <span>
+          {{ microcontrollerPinConfiguration?.microcontrollerPackage }}
+        </span>):
+      </span>
+      <span>
+        {{ microcontrollerPinCount }} ({{ microcontrollerIoLines }} Programmable I/O Lines)
+      </span>
+    </div>
+    <!-- Speed grades -->
+    <div>
+      <span> Speed grades (Max): </span>
+      <span>
+        {{ microcontroller?.electricalCharateristics?.clockFrequencyMaxValue?.frequencyValue }}
+        {{ microcontroller?.electricalCharateristics?.clockFrequencyMaxValue?.frequencyMeasureUnit }}
+      </span>
+    </div>
+    <!-- Operating voltages -->
+    <div>
+      <span> Operating voltages: </span>
+      <span> {{ operatingVoltagesStringify }} </span>
+    </div>
+  </div>
+
+</div>

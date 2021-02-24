@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FuseBitModule } from 'libraries/fuse-bit/public-api';
+import { TechnicalSpecificationsModule } from 'libraries/technical-specifications/lib/technical-specifications.module';
+import { MaterialModule } from 'libraries/material/material.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { FuseBitModule } from 'libraries/fuse-bit/public-api';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FuseBitModule
+    FuseBitModule,
+    TechnicalSpecificationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
