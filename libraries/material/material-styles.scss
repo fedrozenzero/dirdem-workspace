@@ -154,8 +154,7 @@ $dirdem-app-theme: mat-light-theme((
 ));
 
 $dirdem-tipography: mat-typography-config(
-  $font-family: 'Courier New', Courier, monospace
-  // $font-family: 'Consolas'
+  $font-family: 'Consolas'
 );
 
 
@@ -170,12 +169,3 @@ $dirdem-tipography: mat-typography-config(
   --accent: #{mat-color($dirdem-accent)};
   --warn: #{mat-color($dirdem-warn)};
 }
-
-/*
-:root {
-  --dirdemprimary: #bfd9cc;
-  --dirdemsecondary: #ebecef;
-  --dirdemaccent: #030266;
-  --dirdemwarn: #ef9a9a;
-}
-*/

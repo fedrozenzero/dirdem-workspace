@@ -1,4 +1,4 @@
-import { MicrocontrollerTimerInterruptSourcesListEnum } from "libraries/dirdem-common/shared/enums";
+import { MicrocontrollerTimerInterruptSourcesListEnum } from "../../shared/enums";
 
 export interface MicrocontrollerTimerInterruptSource {
   microcontrollerTimerInterruptSourceEnable: boolean;

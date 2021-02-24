@@ -1,4 +1,4 @@
-import { FuseBitLabelEnum } from "libraries/dirdem-common/shared/enums";
+import { FuseBitLabelEnum } from "../../shared/enums";
 
 export class FuseBit {
   label: FuseBitLabelEnum;

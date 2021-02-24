@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ATMEGA328P } from 'libraries/dirdem-common/microcontrollers/ATmega328P';
-import { AvrMicrocontroller } from 'libraries/dirdem-common/models/typeScript/avr-microcontroller';
+import { ATMEGA328P, AvrMicrocontroller } from 'libraries/dirdem-common/public-api';
 
 @Component({
   selector: 'app-root',

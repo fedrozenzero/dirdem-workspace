@@ -1,4 +1,4 @@
-import { MicrocontrollerTimerNamesEnum, PinLabelsEnum } from "libraries/dirdem-common/shared/enums";
+import { MicrocontrollerTimerNamesEnum, PinLabelsEnum } from "../../shared/enums";
 import { ElectronicUnit } from "./electronic-unit";
 import { MicrocontrollerTimerFeature } from "./microcontroller-time-feature";
 import { MicrocontrollerTimerPrescaler } from "./microcontroller-time-prescaler";

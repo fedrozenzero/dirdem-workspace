@@ -1,4 +1,4 @@
-import { MicrocontrollerAdcNamesEnum } from "libraries/dirdem-common/shared/enums";
+import { MicrocontrollerAdcNamesEnum } from "../../shared/enums";
 import { ElectronicUnit } from "./electronic-unit";
 
 export interface MicrocontrollerAdc {

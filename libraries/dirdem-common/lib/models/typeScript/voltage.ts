@@ -1,4 +1,4 @@
-import { VoltageUnitMeasuresEnum } from "libraries/dirdem-common/shared/enums";
+import { VoltageUnitMeasuresEnum } from "../../shared/enums";
 
 export interface Voltage {
   value: number;

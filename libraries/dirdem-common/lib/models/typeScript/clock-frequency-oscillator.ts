@@ -1,4 +1,4 @@
-import { ClockFrequenciesOscillatorMaterialEnum, ClockFrequenciesOscillatorTypeEnum } from "libraries/dirdem-common/shared/enums";
+import { ClockFrequenciesOscillatorTypeEnum, ClockFrequenciesOscillatorMaterialEnum } from "../../shared/enums";
 import { Frequency } from "./frequency";
 
 /**

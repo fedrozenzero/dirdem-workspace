@@ -1,4 +1,5 @@
-import { CurrentsMeasureUnitEnum } from "libraries/dirdem-common/shared/enums";
+import { CurrentsMeasureUnitEnum } from "../../shared/enums";
+
 
 export interface Current {
   currentValue: number;

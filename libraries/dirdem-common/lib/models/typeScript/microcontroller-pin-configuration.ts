@@ -1,4 +1,4 @@
-import { MicrocontrollerPackageEnum } from "libraries/dirdem-common/shared/enums";
+import { MicrocontrollerPackageEnum } from "../../shared/enums";
 import { MicrocontrollerPin } from "./microcontroller-pin";
 
 export class MicrocontrollerPinConfiguaration {

@@ -1,4 +1,5 @@
-import { CommunicationInterfaceNamesEnum, CommunicationInterfaceTypesEnum } from "libraries/dirdem-common/shared/enums";
+import { CommunicationInterfaceNamesEnum, CommunicationInterfaceTypesEnum } from "../../shared/enums";
+
 
 export interface CommunicationInterface {
     name: CommunicationInterfaceNamesEnum;

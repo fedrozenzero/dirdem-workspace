@@ -1,6 +1,5 @@
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { Fuse } from "libraries/dirdem-common/models/typeScript/fuse-bit-base";
-import { EXADECIMAL_REGEX_VALIDATOR } from "libraries/dirdem-common/shared/constants";
+import { EXADECIMAL_REGEX_VALIDATOR, Fuse } from "libraries/dirdem-common/public-api";
 
 export class FuseBitFormValidator {
   private _formGroup: FormGroup;

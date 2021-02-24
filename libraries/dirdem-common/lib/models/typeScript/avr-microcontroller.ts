@@ -1,4 +1,4 @@
-import { AvrdudeFuseTypeEnum, FusesTypeEnum } from 'libraries/dirdem-common/shared/enums';
+import { AvrdudeFuseTypeEnum, FusesTypeEnum } from '../../shared/enums';
 import { AvrMicrocontrollerBase } from './avr-microcontroller-base';
 import { Fuse } from './fuse-bit-base';
 

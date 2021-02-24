@@ -1,4 +1,4 @@
-import { MemorySegmentNamesEnum } from 'libraries/dirdem-common/shared/enums';
+import { MemorySegmentNamesEnum } from '../../shared/enums';
 import { ElectronicUnit } from './electronic-unit';
 
 export interface MemorySegment {

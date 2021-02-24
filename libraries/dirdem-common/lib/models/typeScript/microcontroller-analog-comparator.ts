@@ -1,4 +1,4 @@
-import { MicrocontrollerAnalogComparatorNamesEnum } from "libraries/dirdem-common/shared/enums";
+import { MicrocontrollerAnalogComparatorNamesEnum } from "../../shared/enums";
 
 export interface MicrocontrollerAnalogComparator {
   name: MicrocontrollerAnalogComparatorNamesEnum;

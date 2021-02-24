@@ -1,4 +1,4 @@
-import { ElectronicUnitMeasuresEnum } from "libraries/dirdem-common/shared/enums";
+import { ElectronicUnitMeasuresEnum } from "../../shared/enums";
 
 export interface ElectronicUnit {
   value: number;

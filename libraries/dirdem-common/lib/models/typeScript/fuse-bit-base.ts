@@ -1,5 +1,5 @@
-import { FusesTypeEnum } from "libraries/dirdem-common/shared/enums";
-import { ConverterUtilities } from "libraries/dirdem-common/utilities/ConverterUtilities";
+import { FusesTypeEnum } from "../../shared/enums";
+import { ConverterUtilities } from "../../utilities/ConverterUtilities";
 import { FuseBit } from "./fuse-bit";
 
 export class FuseBase {

@@ -1,4 +1,4 @@
-import { MicrocontrollerTimerFeaturesDescriptionEnum, MicrocontrollerTimerFeaturesNameEnum } from "libraries/dirdem-common/shared/enums";
+import { MicrocontrollerTimerFeaturesNameEnum, MicrocontrollerTimerFeaturesDescriptionEnum } from "../../shared/enums";
 
 export interface MicrocontrollerTimerFeature {
   microcontrollerTimerFeaturesName: MicrocontrollerTimerFeaturesNameEnum;

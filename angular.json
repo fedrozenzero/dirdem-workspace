@@ -110,7 +110,7 @@
             "styles": [
               "apps/configuration-tool/src/styles.scss",
               "libraries/material/material-styles.scss",
-              "libraries/dirdem-common/styles/dirdem-common-styles.scss"
+              "libraries/dirdem-common/lib/styles/dirdem-common-styles.scss"
             ],
             "scripts": []
           },

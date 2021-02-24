@@ -1,13 +1,8 @@
 import { Component, ChangeDetectorRef, Input } from '@angular/core';
-import { AvrMicrocontroller } from 'libraries/dirdem-common/models/typeScript/avr-microcontroller';
-import { FuseBit } from 'libraries/dirdem-common/models/typeScript/fuse-bit';
-import { ConverterUtilities } from 'libraries/dirdem-common/utilities/ConverterUtilities';
 import { ElectronService } from 'ngx-electron';
-import { LoaderService } from 'libraries/dirdem-common/services/loader.service';
-import { Fuse } from 'libraries/dirdem-common/models/typeScript/fuse-bit-base';
-import { MAIN_IN_PROCESSES } from 'libraries/dirdem-common/shared/constants';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FuseBitFormValidator } from './fuse-bit-form-validator';
+import { AvrMicrocontroller, ConverterUtilities, Fuse, FuseBit, LoaderService, MAIN_IN_PROCESSES } from 'libraries/dirdem-common/public-api';
 
 @Component({
   selector: 'app-fuse-bit',

@@ -1,10 +1,10 @@
 import { CommunicationInterface } from './communication-interface';
 import { ElectricalCharateristics } from './electrical-charateristics';
 import { MemorySegment } from './memory-segment';
-import { MicroBrandsEnum, MicrocontrollerNamesEnum, MicrocontrollerPackageEnum, MicroFamiliesEnum, PinTypesEnum } from 'libraries/dirdem-common/shared/enums';
 import { ElectronicUnit } from './electronic-unit';
 import { MicrocontrollerPinConfiguaration } from './microcontroller-pin-configuration';
 import { PeripheralFeatures } from './peripheral-features';
+import { MicrocontrollerNamesEnum, MicroBrandsEnum, MicroFamiliesEnum, MicrocontrollerPackageEnum, PinTypesEnum } from '../../shared/enums';
 
 /**
  * MicrocontrollerBase

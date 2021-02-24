@@ -1,4 +1,4 @@
-import { FrequenciesMeasureUnitEnum } from "libraries/dirdem-common/shared/enums";
+import { FrequenciesMeasureUnitEnum } from "../../shared/enums";
 
 export interface Frequency {
   frequencyValue: number;

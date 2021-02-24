@@ -1,4 +1,4 @@
-import { PinLabelsEnum, PinPortsEnum, PinTypesEnum } from "libraries/dirdem-common/shared/enums";
+import { PinLabelsEnum, PinTypesEnum, PinPortsEnum } from "../../shared/enums";
 
 export interface MicrocontrollerPin {
     number: number;

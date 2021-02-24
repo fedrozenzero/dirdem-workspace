@@ -1,4 +1,4 @@
-import { TemperatureMeasuresEnum } from "libraries/dirdem-common/shared/enums";
+import { TemperatureMeasuresEnum } from "../../shared/enums";
 
 export interface Temperature {
   value: number;

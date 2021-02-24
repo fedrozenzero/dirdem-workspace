@@ -6,6 +6,7 @@ import { FuseBitCardComponent } from './components/fuse-bit-card/fuse-bit-card.c
 import { MaterialModule } from 'libraries/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ElectronService } from 'ngx-electron';
+import { DirdemCommonModule } from 'libraries/dirdem-common/lib/dirdem-common.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ElectronService } from 'ngx-electron';
     FormsModule,
     ReactiveFormsModule,
     FuseBitRoutingModule,
-    MaterialModule
+    MaterialModule,
+    DirdemCommonModule
   ],
   exports: [
     FuseBitComponent,
