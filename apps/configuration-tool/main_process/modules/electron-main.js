@@ -1,7 +1,13 @@
 const { app, BrowserWindow } = require('electron');
+const { loadTerminal } = require('./terminal')
+
+let window
 
 function startElectronMainProcess() {
-  app.on('ready', createWindow)
+  app.on('ready', () => {
+    createWindow()
+    loadTerminal(window)
+  })
 
   app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -10,14 +16,14 @@ function startElectronMainProcess() {
   })
 
   app.on('activate', () => {
-    if (win === null) {
+    if (window === null) {
       createWindow()
     }
   })
 }
 
 function createWindow() {
-  let win = new BrowserWindow({
+   window = new BrowserWindow({
     width: 1000,
     height: 750,
     icon: `${__dirname}/src/assets/logo/dirdem-micro-icon-app.ico`,
@@ -26,13 +32,13 @@ function createWindow() {
       nodeIntegrationInWorker: true
     },
   })
-  win.loadFile('dist/configuration-tool/index.html');
-  //win.webContents.openDevTools()
+  window.loadFile('dist/configuration-tool/index.html');
+  window.webContents.openDevTools()
 
-  win.on('closed', () => {
-    win = null
+  window.on('closed', () => {
+    window = null
   })
-  win.removeMenu()
+  window.removeMenu()
 }
 
 

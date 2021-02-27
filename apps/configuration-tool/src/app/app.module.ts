@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FuseBitModule } from 'libraries/fuse-bit/public-api';
 import { TechnicalSpecificationsModule } from 'libraries/technical-specifications/lib/technical-specifications.module';
 import { MaterialModule } from 'libraries/material/material.module';
+import { TerminalModule } from 'libraries/terminal/public-api';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MaterialModule } from 'libraries/material/material.module';
     AppRoutingModule,
     FuseBitModule,
     TechnicalSpecificationsModule,
-    MaterialModule
+    MaterialModule,
+    TerminalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

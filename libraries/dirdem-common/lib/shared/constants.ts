@@ -4,7 +4,8 @@ export const MAIN_IN_PROCESSES =
    readFuses: 'readFuses',
    burnArduinoUnoBootloader: 'burnArduinoUnoBootloader',
    compileCProject: 'compileCProject',
-   burnHexFile: 'burnHexFile'
+   burnHexFile: 'burnHexFile',
+   sendSerialMonitorData: 'sendSerialMonitorData'
 }
 
 export const MAIN_OUT_PROCESSES =
@@ -18,7 +19,8 @@ export const MAIN_OUT_PROCESSES =
    burnFusesFailed: 'burnFusesFailed',
    burnArduinoUnoBootloaderFailed: 'burnArduinoUnoBootloaderFailed',
    compileCProjectFailed: 'compileCProjectFailed',
-   burnHexFileFailed: 'burnHexFileFailed'
+   burnHexFileFailed: 'burnHexFileFailed',
+   incomingSerialMonitorData: 'incomingSerialMonitornData',
 }
 
 export const EXADECIMAL_REGEX_VALIDATOR = /[0-9A-Fa-f]{1,2}\b/
