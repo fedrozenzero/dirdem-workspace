@@ -24,7 +24,7 @@ export class TerminalComponent {
 
   ngAfterViewInit(): void {
     this.terminal.open(document.getElementById('terminal'))
-    this.electronService.ipcRenderer.on(MAIN_OUT_PROCESSES.incomingSerialMonitorData, (evt, arg) => {
+    this.electronService.ipcRenderer.on(MAIN_OUT_PROCESSES.incomingTerminalData, (evt, arg) => {
       this.terminal.write(arg)
     })
     this.sendData()
@@ -33,8 +33,16 @@ export class TerminalComponent {
 
   sendData() {
     this.terminal.onData(e   => {
-      this.electronService.ipcRenderer.send(MAIN_IN_PROCESSES.sendSerialMonitorData, e)
+      this.electronService.ipcRenderer.send(MAIN_IN_PROCESSES.sendTerminalData, e)
     })
+  }
+
+  startSerialMonitornConnection(){
+    this.electronService.ipcRender.send(MAIN_IN_PROCESSES.startSerialMonitor, ['COM3', 9600])
+    this.electronService.ipcRender.on(MAIN_OUT_PROCESSES.serialMonitorData, (evt, arg) =>{
+      this.terminal.write(arg);
+    })
+
   }
 
 }

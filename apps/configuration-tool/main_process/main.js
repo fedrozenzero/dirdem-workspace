@@ -6,6 +6,7 @@ const burnFuses = require('./modules/burn-fuses');
 const readFuses = require('./modules/read-fuses');
 const burnHexFile = require('./modules/burn-hex-file');
 const compileCProject = require('./modules/compile-c-project');
+const serialMonitorConnection = require('./modules/serial-monitor');
 
 electronMain;
 
@@ -18,3 +19,5 @@ readFuses(USB_PROGRAMMER);
 burnHexFile(USB_PROGRAMMER);
 
 compileCProject();
+
+serialMonitorConnection();

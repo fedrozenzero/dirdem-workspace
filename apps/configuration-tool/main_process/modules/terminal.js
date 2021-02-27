@@ -10,12 +10,12 @@ function loadTerminal(mainWindow) {
         env: process.env
     });
 
-    ptyProcess.on('data', function (data) {
-        mainWindow.webContents.send("incomingSerialMonitornData", data);
+    ptyProcess.on('data', data => {
+        mainWindow.webContents.send("incomingTerminalData", data);
         console.log("Data sent");
     });
 
-    ipcMain.on("sendSerialMonitorData", (event, key) => {
+    ipcMain.on("sendTerminalData", (event, key) => {
         ptyProcess.write(key);
     });
 }
