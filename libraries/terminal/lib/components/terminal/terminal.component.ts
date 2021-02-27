@@ -38,8 +38,8 @@ export class TerminalComponent {
   }
 
   startSerialMonitornConnection(){
-    this.electronService.ipcRender.send(MAIN_IN_PROCESSES.startSerialMonitor, ['COM3', 9600])
-    this.electronService.ipcRender.on(MAIN_OUT_PROCESSES.serialMonitorData, (evt, arg) =>{
+    this.electronService.ipcRenderer.send(MAIN_IN_PROCESSES.startSerialMonitor, ['COM4', 9600])
+    this.electronService.ipcRenderer.on(MAIN_OUT_PROCESSES.serialMonitorData, (evt, arg) =>{
       this.terminal.write(arg);
     })
 
