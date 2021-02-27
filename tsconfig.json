@@ -27,6 +27,10 @@
       "technical-specifications": [
         "dist/technical-specifications/technical-specifications",
         "dist/technical-specifications"
+      ],
+      "terminal": [
+        "dist/terminal/terminal",
+        "dist/terminal"
       ]
     }
   }
