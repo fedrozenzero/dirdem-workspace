@@ -27,6 +27,9 @@ export class TerminalComponent {
     this.electronService.ipcRenderer.on(MAIN_OUT_PROCESSES.incomingTerminalData, (evt, arg) => {
       this.terminal.write(arg)
     })
+    this.electronService.ipcRenderer.on(MAIN_OUT_PROCESSES.mainProcessError, (evt, arg) => {
+      this.terminal.write(arg)
+    })
   }
 
 }

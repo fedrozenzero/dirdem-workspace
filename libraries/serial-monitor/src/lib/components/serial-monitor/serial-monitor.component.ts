@@ -31,7 +31,7 @@ export class SerialMonitorComponent implements OnInit {
 
   onSerialSelectOpened(evt) {
     if (evt) {
-     // this.electronService.ipcRenderer.send(MAIN_IN_PROCESSES.getSerialPort)
+      this.electronService.ipcRenderer.send(MAIN_IN_PROCESSES.getSerialPorts)
     }
   }
 

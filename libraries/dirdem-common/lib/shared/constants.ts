@@ -6,7 +6,7 @@ export const MAIN_IN_PROCESSES =
    compileCProject: 'compileCProject',
    burnHexFile: 'burnHexFile',
    startSerialMonitor: 'startSerialMonitor',
-   getSerialPort: 'getSerialPorts'
+   getSerialPorts: 'getSerialPorts'
 }
 
 export const MAIN_OUT_PROCESSES =
