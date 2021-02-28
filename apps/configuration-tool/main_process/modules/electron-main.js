@@ -1,12 +1,10 @@
 const { app, BrowserWindow } = require('electron');
-const { loadTerminal } = require('./terminal')
 
 let window
 
 function startElectronMainProcess() {
   app.on('ready', () => {
     createWindow()
-    loadTerminal(window)
   })
 
   app.on('window-all-closed', () => {

@@ -31,6 +31,10 @@
       "terminal": [
         "dist/terminal/terminal",
         "dist/terminal"
+      ],
+      "serial-monitor": [
+        "dist/serial-monitor/serial-monitor",
+        "dist/serial-monitor"
       ]
     }
   }
