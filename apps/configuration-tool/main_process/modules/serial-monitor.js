@@ -12,7 +12,8 @@ module.exports = function serialMonitorConnection() {
         });
         const parser = sp.pipe(new ByteLength({ length: 1 }))
         parser.on('data', (data) => {
-            event.reply('serialMonitorData', data);
+            console.log(data.toString())
+            event.reply('serialMonitorData', data.toString());
         })
     });
 }

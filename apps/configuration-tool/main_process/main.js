@@ -7,7 +7,7 @@ const readFuses = require('./modules/read-fuses');
 const burnHexFile = require('./modules/burn-hex-file');
 const compileCProject = require('./modules/compile-c-project');
 const serialMonitorConnection = require('./modules/serial-monitor');
-// const getSerialPortValues = require('./modules/serial-port-read')
+const getSerialPortValues = require('./modules/serial-port-read')
 
 electronMain;
 
@@ -23,4 +23,4 @@ compileCProject();
 
 serialMonitorConnection();
 
-// getSerialPortValues();
+getSerialPortValues();

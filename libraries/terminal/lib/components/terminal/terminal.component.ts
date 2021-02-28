@@ -24,7 +24,7 @@ export class TerminalComponent {
 
   ngAfterViewInit(): void {
     this.terminal.open(document.getElementById('terminal'))
-    this.electronService.ipcRenderer.on(MAIN_OUT_PROCESSES.incomingTerminalData, (evt, arg) => {
+    this.electronService.ipcRenderer.on(MAIN_OUT_PROCESSES.serialMonitorData, (evt, arg) => {
       this.terminal.write(arg)
     })
     this.electronService.ipcRenderer.on(MAIN_OUT_PROCESSES.mainProcessError, (evt, arg) => {

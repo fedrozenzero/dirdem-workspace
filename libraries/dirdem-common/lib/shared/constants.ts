@@ -21,7 +21,6 @@ export const MAIN_OUT_PROCESSES =
    burnArduinoUnoBootloaderFailed: 'burnArduinoUnoBootloaderFailed',
    compileCProjectFailed: 'compileCProjectFailed',
    burnHexFileFailed: 'burnHexFileFailed',
-   incomingTerminalData: 'incomingTerminalData',
    serialMonitorData: 'serialMonitorData',
    serialPortsCompleted: 'serialPortsCompleted'
 }

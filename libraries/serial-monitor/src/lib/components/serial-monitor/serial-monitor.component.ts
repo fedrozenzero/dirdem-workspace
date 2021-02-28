@@ -36,9 +36,9 @@ export class SerialMonitorComponent implements OnInit {
   }
 
   startSerialMonitornConnection(){
-    const port = this.formValidator?.port?.value
+    const port = 'COM3' //this.formValidator?.port?.value
     const baudRate = this.formValidator?.baudRate?.value
-    this.electronService.ipcRenderer.send(MAIN_IN_PROCESSES.startSerialMonitor, [port, baudRate])
+    this.electronService.ipcRenderer.send(MAIN_IN_PROCESSES.startSerialMonitor, [port, parseInt(baudRate) ])
   }
 
   stopSerialMonitorConnection() {
