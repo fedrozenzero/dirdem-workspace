@@ -83,129 +83,6 @@
         }
       }
     },
-    "configuration-tool": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "apps/configuration-tool",
-      "sourceRoot": "apps/configuration-tool/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/configuration-tool",
-            "index": "apps/configuration-tool/src/index.html",
-            "main": "apps/configuration-tool/src/main.ts",
-            "polyfills": "apps/configuration-tool/src/polyfills.ts",
-            "tsConfig": "apps/configuration-tool/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "apps/configuration-tool/src/favicon.ico",
-              "apps/configuration-tool/src/assets"
-            ],
-            "styles": [
-              "apps/configuration-tool/src/styles.scss",
-              "libraries/material/material-styles.scss",
-              "libraries/dirdem-common/lib/styles/dirdem-common-styles.scss",
-              "node_modules/xterm/css/xterm.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/configuration-tool/src/environments/environment.ts",
-                  "with": "apps/configuration-tool/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "configuration-tool:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "configuration-tool:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "configuration-tool:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "apps/configuration-tool/src/test.ts",
-            "polyfills": "apps/configuration-tool/src/polyfills.ts",
-            "tsConfig": "apps/configuration-tool/tsconfig.spec.json",
-            "karmaConfig": "apps/configuration-tool/karma.conf.js",
-            "assets": [
-              "apps/configuration-tool/src/favicon.ico",
-              "apps/configuration-tool/src/assets"
-            ],
-            "styles": [
-              "apps/configuration-tool/src/styles.scss"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/configuration-tool/tsconfig.app.json",
-              "apps/configuration-tool/tsconfig.spec.json",
-              "apps/configuration-tool/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/configuration-tool/e2e/protractor.conf.js",
-            "devServerTarget": "configuration-tool:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "configuration-tool:serve:production"
-            }
-          }
-        }
-      }
-    },
     "technical-specifications": {
       "projectType": "library",
       "root": "libraries/technical-specifications",
@@ -325,7 +202,128 @@
           }
         }
       }
+    },
+    "dirdem-serial": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/dirdem-serial",
+      "sourceRoot": "apps/dirdem-serial/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/dirdem-serial",
+            "index": "apps/dirdem-serial/src/index.html",
+            "main": "apps/dirdem-serial/src/main.ts",
+            "polyfills": "apps/dirdem-serial/src/polyfills.ts",
+            "tsConfig": "apps/dirdem-serial/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/dirdem-serial/src/favicon.ico",
+              "apps/dirdem-serial/src/assets"
+            ],
+            "styles": [
+              "apps/dirdem-serial/src/styles.scss",
+              "static/styles/dirdem-common-styles.scss",
+              "static/styles/material-styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dirdem-serial/src/environments/environment.ts",
+                  "with": "apps/dirdem-serial/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dirdem-serial:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dirdem-serial:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dirdem-serial:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/dirdem-serial/src/test.ts",
+            "polyfills": "apps/dirdem-serial/src/polyfills.ts",
+            "tsConfig": "apps/dirdem-serial/tsconfig.spec.json",
+            "karmaConfig": "apps/dirdem-serial/karma.conf.js",
+            "assets": [
+              "apps/dirdem-serial/src/favicon.ico",
+              "apps/dirdem-serial/src/assets"
+            ],
+            "styles": [
+              "apps/dirdem-serial/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/dirdem-serial/tsconfig.app.json",
+              "apps/dirdem-serial/tsconfig.spec.json",
+              "apps/dirdem-serial/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/dirdem-serial/e2e/protractor.conf.js",
+            "devServerTarget": "dirdem-serial:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dirdem-serial:serve:production"
+            }
+          }
+        }
+      }
     }
-  },
-  "defaultProject": "fuse-bit"
+  }
 }

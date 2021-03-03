@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { SerialPort } from 'libraries/dirdem-common/lib/models/typeScript/serial-port';
-import { MAIN_IN_PROCESSES, MAIN_OUT_PROCESSES } from 'libraries/dirdem-common/public-api';
+import { MAIN_IN_PROCESSES, MAIN_OUT_PROCESSES, SerialPort } from 'dirdem-common';
 import { ElectronService } from 'ngx-electron';
 import { BAUD_RATE_VALUES } from '../../shared/constants';
 import { SerialMonitorFormValidator } from './serial-monitor-form-validator';

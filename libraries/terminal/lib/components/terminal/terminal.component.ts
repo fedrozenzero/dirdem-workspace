@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MAIN_OUT_PROCESSES } from 'libraries/dirdem-common/public-api';
+import { MAIN_OUT_PROCESSES } from 'dirdem-common';
 import { ElectronService } from 'ngx-electron';
 import { Terminal } from 'xterm';
 

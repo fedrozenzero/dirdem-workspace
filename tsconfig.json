@@ -16,25 +16,9 @@
       "dom"
     ],
     "paths": {
-      "fuse-bit": [
-        "dist/fuse-bit/fuse-bit",
-        "dist/fuse-bit"
-      ],
       "dirdem-common": [
         "dist/dirdem-common/dirdem-common",
         "dist/dirdem-common"
-      ],
-      "technical-specifications": [
-        "dist/technical-specifications/technical-specifications",
-        "dist/technical-specifications"
-      ],
-      "terminal": [
-        "dist/terminal/terminal",
-        "dist/terminal"
-      ],
-      "serial-monitor": [
-        "dist/serial-monitor/serial-monitor",
-        "dist/serial-monitor"
       ]
     }
   }

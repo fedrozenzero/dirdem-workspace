@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FuseBitRoutingModule } from './fuse-bit-routing.module';
 import { FuseBitComponent } from './components/fuse-bit/fuse-bit.component';
-import { FuseBitCardComponent } from './components/fuse-bit-card/fuse-bit-card.component';
 import { MaterialModule } from 'libraries/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ElectronService } from 'ngx-electron';
-import { DirdemCommonModule } from 'libraries/dirdem-common/lib/dirdem-common.module';
+import { DirdemCommonModule } from 'dirdem-common';
 
 
 @NgModule({
   declarations: [
-    FuseBitComponent,
-    FuseBitCardComponent
+    FuseBitComponent
   ],
   imports: [
     CommonModule,
@@ -23,8 +21,7 @@ import { DirdemCommonModule } from 'libraries/dirdem-common/lib/dirdem-common.mo
     DirdemCommonModule
   ],
   exports: [
-    FuseBitComponent,
-    FuseBitCardComponent
+    FuseBitComponent
   ],
   providers: [
     ElectronService

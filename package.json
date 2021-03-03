@@ -4,7 +4,7 @@
   "author": "DM Inc.",
   "description": "The Builder",
   "legalTrademarks": "(c) 2020 dirdem.com",
-  "main": "apps/configuration-tool/main_process/main.js",
+  "main": "apps/dirdem-serial/main_process/main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,7 +13,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "electron-build": "ng build configuration-tool && electron ."
+    "electron-build": "ng build dirdem-serial && electron ."
   },
   "private": true,
   "dependencies": {

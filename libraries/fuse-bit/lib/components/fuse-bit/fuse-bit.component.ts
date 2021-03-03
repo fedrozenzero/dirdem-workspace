@@ -2,7 +2,8 @@ import { Component, ChangeDetectorRef, Input } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FuseBitFormValidator } from './fuse-bit-form-validator';
-import { AvrMicrocontroller, ConverterUtilities, Fuse, FuseBit, LoaderService, MAIN_IN_PROCESSES } from 'libraries/dirdem-common/public-api';
+import { AvrMicrocontroller, ConverterUtilities, Fuse, FuseBit, LoaderService, MAIN_IN_PROCESSES } from 'dirdem-common';
+
 
 @Component({
   selector: 'app-fuse-bit',
