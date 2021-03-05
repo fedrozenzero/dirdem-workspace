@@ -1,0 +1,34 @@
+<div id="serial-monitor-controls" [formGroup]="formValidator?.formGroup" *ngIf="formValidator?.formGroup">
+
+
+  <button mat-raised-button [disabled]="formValidator?.formGroup?.invalid" color="primary" (click)="startSerialMonitornConnection()">
+    Start
+  </button>
+
+  <button mat-raised-button *ngIf="serialMonitorStarted" (click)="stopSerialMonitorConnection()">
+    Stop
+  </button>
+
+
+  <mat-form-field color="accent">
+    <mat-label>Baud rate</mat-label>
+    <mat-select formControlName="baudRate">
+      <mat-option *ngFor="let value of baudRateValues" [value]="value">
+        {{ value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <mat-form-field color="accent">
+    <mat-label>Serial port</mat-label>
+    <mat-select formControlName="port" (openedChange)="onSerialSelectOpened($event)">
+      <mat-option *ngFor="let value of serialPortValues" [value]="value">
+        {{ value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+
+</div>

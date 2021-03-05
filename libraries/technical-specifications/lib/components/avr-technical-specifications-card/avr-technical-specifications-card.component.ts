@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AvrMicrocontroller, MicrocontrollerPinConfiguaration } from 'libraries/dirdem-common/public-api';
+import { AvrMicrocontroller, MicrocontrollerPinConfiguaration } from 'dirdem-common';
 
 @Component({
   selector: 'lib-avr-technical-specifications-card',
